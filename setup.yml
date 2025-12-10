@@ -1,0 +1,4 @@
+- hosts: bio-tools
+  roles:
+    - pkgs
+    - docker

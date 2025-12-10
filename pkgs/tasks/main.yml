@@ -1,0 +1,10 @@
+- name: Install essential packages
+  ansible.builtin.apt:
+    name:
+      - nginx
+      - ca-certificates
+      - curl
+      - gnupg
+      - htop
+    state: present
+  become: yes
