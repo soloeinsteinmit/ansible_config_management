@@ -1,4 +1,5 @@
-- hosts: bio-tools
+- hosts: web
   roles:
     - pkgs
     - docker
+    - node

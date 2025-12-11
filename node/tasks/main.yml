@@ -1,0 +1,27 @@
+    - name: Add NodeSource GPG key
+      ansible.builtin.apt_key:
+        url: https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key
+        state: present
+
+    - name: Add NodeSource repo (Node.js 20)
+      ansible.builtin.apt_repository:
+        repo: "deb https://deb.nodesource.com/node_20.x nodistro main"
+        state: present
+        filename: nodesource
+
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Install Node.js
+      ansible.builtin.apt:
+        name: nodejs
+        state: present
+
+    - name: Verify Node.js installation
+      ansible.builtin.command: node -v
+      register: node_version
+
+    - name: Show installed version
+      ansible.builtin.debug:
+        msg: "Node version: {{ node_version.stdout }}"
