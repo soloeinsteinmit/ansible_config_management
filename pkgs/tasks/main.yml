@@ -6,5 +6,7 @@
       - curl
       - gnupg
       - htop
+      - build-sessential
+      - libssl-dev
     state: present
   become: yes
