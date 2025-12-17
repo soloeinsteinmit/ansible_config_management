@@ -3,9 +3,9 @@
         url: https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key
         state: present
 
-    - name: Add NodeSource repo (Node.js 20)
+    - name: Add NodeSource repo (Node.js 24)
       ansible.builtin.apt_repository:
-        repo: "deb https://deb.nodesource.com/node_20.x nodistro main"
+        repo: "deb https://deb.nodesource.com/node_24.x nodistro main"
         state: present
         filename: nodesource
 
